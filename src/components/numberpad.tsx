@@ -14,7 +14,7 @@ export default function NumberPad () {
             {number_pad.map((keyRow)=> {return(
                 <View style={styles.key_row}>
                     {keyRow.map((key)=> {return(
-                        <Pressable onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys}>
+                        <Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys}>
                             <Text style={styles.key_style}>{key}</Text>
                         </Pressable>
                     )})}
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     whole_pad:{
         width: '100%',
         padding: 20,
-        flex: 30,
+        flex: 5,
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: 'lightGrey',

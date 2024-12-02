@@ -28,5 +28,6 @@ const styles = StyleSheet.create({
         textAlign: 'right',
         fontSize: 70,
         textAlignVertical: 'center',
+        margin: 'auto',
     },
 })

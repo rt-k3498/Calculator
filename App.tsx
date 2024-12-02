@@ -1,9 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Store from '../calc_front/src/store';
+import Store from './src/store';
 import { Provider } from 'react-redux';
-import Screen from '../calc_front/src/components/screen';
-import NumberPad from '../calc_front/src/components/numberpad';
+import Screen from './src/components/screen';
+import NumberPad from './src/components/numberpad';
 
 export default function App() {
   return (
