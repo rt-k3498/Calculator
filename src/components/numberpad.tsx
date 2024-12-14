@@ -14,9 +14,30 @@ export default function NumberPad () {
             {number_pad.map((keyRow)=> {return(
                 <View style={styles.key_row}>
                     {keyRow.map((key)=> {return(
-                        <Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys}>
+                        key === 'AC' || key === '=' ?
+                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_AC}>
                             <Text style={styles.key_style}>{key}</Text>
-                        </Pressable>
+                        </Pressable>)
+                        :
+                        key === '-' || key === '+' ?
+                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
+                            <Text style={styles.key_style}>{key}</Text>
+                        </Pressable>)
+                        :
+                        key === '/' ?
+                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
+                            <Text style={styles.key_style}>{'÷'}</Text>
+                        </Pressable>)
+                        :
+                        key === '*' ?
+                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
+                            <Text style={styles.key_style}>{'×'}</Text>
+                        </Pressable>)
+                        :
+                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys}>
+                            <Text style={styles.key_style}>{key}</Text>
+                        </Pressable>)
+
                     )})}
                 </View>
             )})}
@@ -51,5 +72,19 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         backgroundColor: 'lightGrey',
 
+    },
+    keys_AC:{
+        flex: 1,
+        padding: 10,
+        margin: 5,
+        borderRadius: 15,
+        backgroundColor: 'orange',
+    },
+    keys_op:{
+        flex: 1,
+        padding: 10,
+        margin: 5,
+        borderRadius: 15,
+        backgroundColor: 'lightblue',
     },
 })

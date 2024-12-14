@@ -1,29 +1,24 @@
+import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Store from './src/store';
-import { Provider } from 'react-redux';
-import Screen from './src/components/screen';
-import NumberPad from './src/components/numberpad';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import SimpleCalc from './src/screens/simple_calc';
+
+const Drawer = createDrawerNavigator();
 
 export default function App() {
   return (
-    <Provider store={Store}>
-      <View style={styles.container}>
-        <Screen/>
-        <NumberPad/>
-        <StatusBar style="auto" />
-      </View>
-    </Provider>
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name = 'Arithmetic Calculator' component = {SimpleCalc}/>
+      </Drawer.Navigator>
+    </NavigationContainer>
+    
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 100,
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
 });
