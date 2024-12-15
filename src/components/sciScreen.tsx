@@ -1,11 +1,11 @@
 import {ScrollView,StyleSheet,Text,Dimensions} from 'react-native';
 import { useSelector,useDispatch } from 'react-redux';
-import { RootState } from 'src/store';
+import { SciRootState } from 'src/sciStore';
 //const {width} = Dimensions.get('window');
 
 
-export default function Screen() {
-    const expression = useSelector((state:RootState) => state.screen.expression);
+export default function SciScreen() {
+    const expression = useSelector((state:SciRootState) => state.screen.expression);
     return (
         <ScrollView horizontal={true} style={styles.container}>
             <Text style={styles.screen_text}>{expression}</Text>
@@ -26,8 +26,9 @@ const styles = StyleSheet.create({
     screen_text: {
         color: 'white',
         textAlign: 'right',
-        fontSize: 70,
-        textAlignVertical: 'center',
+        fontSize:40,
+        height: '100%',
+        textAlignVertical: 'top',
         margin: 'auto',
     },
 })

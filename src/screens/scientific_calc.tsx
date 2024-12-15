@@ -1,17 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Store from '../store';
+import SciStore from '../sciStore';
 import { Provider } from 'react-redux';
-import Screen from '../components/screen';
-import NumberPad from '../components/numberpad'; 
+import SciScreen from '../components/sciScreen';
+import SciNumberPad from '../components/sciNumberpad'; 
 
-export default function SimpleCalc() {
+export default function ScientificCalc() {
     return (
-      <Provider store={Store}>
+      <Provider store={SciStore}>
         <View style={styles.container}>
           <StatusBar style="auto" />
-          <Screen/>
-          <NumberPad/>
+          <SciScreen/>
+          <SciNumberPad/>
         </View>
       </Provider>
     );

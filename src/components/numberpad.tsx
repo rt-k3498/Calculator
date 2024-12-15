@@ -4,37 +4,37 @@ import {updateExpression} from '../store';
 
 export default function NumberPad () {
     const dispatch = useDispatch()
-    const number_pad = [['AC','/'],
+    const number_pad = [['AC','Del','/'],
                         ['7','8','9','*'],
                         ['4','5','6','-'],
                         ['1','2','3','+'],
                         ['0','.','=']]
     return(
         <View style={styles.whole_pad}>
-            {number_pad.map((keyRow)=> {return(
-                <View style={styles.key_row}>
-                    {keyRow.map((key)=> {return(
-                        key === 'AC' || key === '=' ?
-                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_AC}>
+            {number_pad.map((keyRow,keyRowIndex)=> {return(
+                <View key={keyRowIndex} style={styles.key_row}>
+                    {keyRow.map((key,keyIndex)=> {return(
+                        key === 'AC' || key === '=' || key === 'Del' ?
+                        (<Pressable key={keyIndex} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_AC}>
                             <Text style={styles.key_style}>{key}</Text>
                         </Pressable>)
                         :
                         key === '-' || key === '+' ?
-                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
+                        (<Pressable key={keyIndex} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
                             <Text style={styles.key_style}>{key}</Text>
                         </Pressable>)
                         :
                         key === '/' ?
-                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
+                        (<Pressable key={keyIndex} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
                             <Text style={styles.key_style}>{'÷'}</Text>
                         </Pressable>)
                         :
                         key === '*' ?
-                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
+                        (<Pressable key={keyIndex} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys_op}>
                             <Text style={styles.key_style}>{'×'}</Text>
                         </Pressable>)
                         :
-                        (<Pressable key={key} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys}>
+                        (<Pressable key={keyIndex} onPress={()=>{dispatch(updateExpression(key))}} style={styles.keys}>
                             <Text style={styles.key_style}>{key}</Text>
                         </Pressable>)
 
@@ -48,7 +48,8 @@ export default function NumberPad () {
 const styles = StyleSheet.create({
     key_style:{
         margin: 'auto',
-        fontSize: 20,
+        fontSize: 24,
+        fontWeight: 'bold',
         textAlign: 'center',
     },
     keys:{
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
         padding: 10,
         margin: 5,
         borderRadius: 15,
-        backgroundColor: 'grey',
+        backgroundColor: 'lightgrey',
     },
     key_row:{
         display: 'flex',
@@ -70,7 +71,6 @@ const styles = StyleSheet.create({
         flex: 5,
         display: 'flex',
         flexDirection: 'column',
-        backgroundColor: 'lightGrey',
 
     },
     keys_AC:{

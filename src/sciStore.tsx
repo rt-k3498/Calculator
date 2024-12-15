@@ -5,10 +5,29 @@ const screenSlice = createSlice({
         name: 'screen',
         initialState: {
             expression: '',
+            formula: '',
         },
         reducers: {
-            updateExpression: (state,action) => {
+            sciUpdateExpression: (state,action) => {
+                const math = require('mathjs');
                 switch (action.payload){
+                    case '^': {
+                        state.expression += '**';
+                        break;
+                    }
+                    case 'x²': {
+                        state.expression += '**2';
+                        break;
+                    }
+                    case '!': {
+                        function factorial(n:number):number{
+                            if (n === 0){
+                                return 1;
+                            }
+                            return n * factorial(n-1);
+                        }
+
+                    }
                     case 'Del': {
                         state.expression = state.expression.slice(0,-1);
                         break;
@@ -48,5 +67,5 @@ const store = configureStore({
 })
 
 export default store;
-export type RootState = ReturnType<typeof store.getState>;
-export const {updateExpression} = screenSlice.actions;
+export type SciRootState = ReturnType<typeof store.getState>;
+export const {sciUpdateExpression} = screenSlice.actions;
