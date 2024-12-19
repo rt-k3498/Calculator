@@ -13,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "Kcalc"
     },
     "android": {
       "adaptiveIcon": {
@@ -23,6 +24,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "341063a8-7a7b-4c6e-97d5-63d6158ad202"
+      }
     }
   }
 }
