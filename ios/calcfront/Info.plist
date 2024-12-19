@@ -27,7 +27,7 @@
       <dict>
         <key>CFBundleURLSchemes</key>
         <array>
-          <string>Kcalc</string>
+          <string>com.ArtyK.Kcalc</string>
         </array>
       </dict>
     </array>
