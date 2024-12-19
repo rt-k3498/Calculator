@@ -14,14 +14,14 @@ export default function SciNumberPad () {
 
     const nd_pad = [['2nd','(',')','%','^'],
                     ['x³','n!','sin⁻¹','cos⁻¹','tan⁻¹'],
-                    ['√³','log₁₀','log₂','ln','π'],
+                    ['√³','log','log₂','ln','π'],
                     ['e','sinh⁻¹','cosh⁻¹','tanh⁻¹','ⁿ√']]
 
     const number_pad = [['AC','Del','/'],
                         ['7','8','9','*'],
                         ['4','5','6','-'],
                         ['1','2','3','+'],
-                        ['0','.','=']]
+                        [',','0','.','=']]
 
     function togglePad(){
         setPadState((prev) => !prev)
