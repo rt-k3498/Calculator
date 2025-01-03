@@ -17,6 +17,8 @@
 		BB2F792D24A3F905000567C9 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = BB2F792C24A3F905000567C9 /* Expo.plist */; };
 		BBB65658DD3D54440CA658A2 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 832079392A0E313F0B4E1504 /* PrivacyInfo.xcprivacy */; };
 		FC33559A2D15947500E14C90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC3355992D15947500E14C90 /* GoogleService-Info.plist */; };
+		FC33559D2D15A17F00E14C90 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC33559C2D15A17F00E14C90 /* UIKit.framework */; };
+		FC33559F2D15A1B300E14C90 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC33559E2D15A1B300E14C90 /* FirebaseCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-calcfront/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		FC3355992D15947500E14C90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FC33559C2D15A17F00E14C90 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FC33559E2D15A1B300E14C90 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC33559F2D15A1B300E14C90 /* FirebaseCore.framework in Frameworks */,
+				FC33559D2D15A17F00E14C90 /* UIKit.framework in Frameworks */,
 				842666C7F08D9A529F9E06A8 /* Pods_calcfront.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +77,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC33559E2D15A1B300E14C90 /* FirebaseCore.framework */,
+				FC33559C2D15A17F00E14C90 /* UIKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				A8FDD06BE0E7ABB74F1D3EAD /* Pods_calcfront.framework */,
 			);
